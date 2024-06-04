@@ -1,0 +1,80 @@
+.main-sidebar {
+  background-color: #ffffff; /* Ajusta este color según tu tema */
+  border-right: 1px solid #e3e6f0; /* Ajusta según tu diseño */
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.sidebar-brand {
+  font-size: 1.75rem;
+  color: #4e73df; /* Color principal del tema */
+  text-align: center;
+  padding: 1rem;
+}
+
+.sidebar-brand a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-menu .menu-header {
+  font-size: 0.85rem;
+  color: #6c757d;
+  padding: 0.75rem 1.25rem;
+  text-transform: uppercase;
+}
+
+.sidebar-menu li {
+  padding: 0.5rem 1.25rem;
+}
+
+.sidebar-menu li a {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #858796;
+  text-decoration: none;
+}
+
+.sidebar-menu li a:hover {
+  background-color: #f8f9fc;
+  color: #4e73df;
+  border-radius: 0.35rem;
+}
+
+.sidebar-menu li .dropdown-menu {
+  background-color: #f8f9fc;
+  border: none;
+  box-shadow: none; /* Remove the shadow */
+}
+
+.sidebar-menu li .dropdown-menu a {
+  color: #858796;
+  padding: 0.5rem 1.25rem; /* Add padding to dropdown items */
+}
+
+.sidebar-menu li .dropdown-menu a:hover {
+  color: #4e73df;
+  background-color: #e2e6ea; /* Add background color on hover */
+  border-radius: 0.35rem; /* Add border-radius to match the sidebar links */
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.nav-link.has-dropdown::after {
+  content: '\f078';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  float: right;
+}
