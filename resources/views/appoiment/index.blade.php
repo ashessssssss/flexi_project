@@ -1,19 +1,18 @@
 @extends('tablar::page')
 
 @section('title')
-    Citas
+    Appoiment
 @endsection
 
 @section('content')
     <!-- Page header -->
-    <link rel="icon" href="../img/logo.jpeg" type="image/x-icon">
     <div class="page-header d-print-none">
         <div class="container-xl">
             <div class="row g-2 align-items-center">
                 <div class="col">
                     <!-- Page pre-title -->
                     <div class="page-pretitle">
-                        Lista
+                        List
                     </div>
                     <h2 class="page-title">
                         {{ __('Appoiment ') }}
@@ -31,7 +30,7 @@
                                 <line x1="12" y1="5" x2="12" y2="19"/>
                                 <line x1="5" y1="12" x2="19" y2="12"/>
                             </svg>
-                            Crear Cita
+                            Create Appoiment
                         </a>
                     </div>
                 </div>
@@ -48,20 +47,20 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Cita</h3>
+                            <h3 class="card-title">Appoiment</h3>
                         </div>
                         <div class="card-body border-bottom py-3">
                             <div class="d-flex">
                                 <div class="text-muted">
-                                    Mostrar
+                                    Show
                                     <div class="mx-2 d-inline-block">
                                         <input type="text" class="form-control form-control-sm" value="10" size="3"
                                                aria-label="Invoices count">
                                     </div>
-                                    entradas
+                                    entries
                                 </div>
                                 <div class="ms-auto text-muted">
-                                    Buscar:
+                                    Search:
                                     <div class="ms-2 d-inline-block">
                                         <input type="text" class="form-control form-control-sm"
                                                aria-label="Search invoice">
@@ -86,12 +85,14 @@
                                         </svg>
                                     </th>
                                     
-										<th>Id de Cliente</th>
-										<th>Id de Servicio</th>
+										<th>Id Usuario</th>
+										<th>Id Servicio</th>
+										<th>Id Vh</th>
 										<th>Fecha Cita</th>
 										<th>Hora Cita</th>
 										<th>Id Empleado</th>
 										<th>Estado Cita</th>
+										<th>Id Prod</th>
 
                                     <th class="w-1"></th>
                                 </tr>
@@ -104,28 +105,30 @@
                                                    aria-label="Select appoiment"></td>
                                         <td>{{ ++$i }}</td>
                                         
-											<td>{{ $appoiment->id_cliente }}</td>
+											<td>{{ $appoiment->id_usuario }}</td>
 											<td>{{ $appoiment->id_servicio }}</td>
+											<td>{{ $appoiment->id_vh }}</td>
 											<td>{{ $appoiment->fecha_cita }}</td>
 											<td>{{ $appoiment->hora_cita }}</td>
 											<td>{{ $appoiment->id_empleado }}</td>
-											<td>{{ $appoiment->estado_emp }}</td>
+											<td>{{ $appoiment->estado_cita }}</td>
+											<td>{{ $appoiment->id_prod }}</td>
 
                                         <td>
                                             <div class="btn-list flex-nowrap">
                                                 <div class="dropdown">
                                                     <button class="btn dropdown-toggle align-text-top"
                                                             data-bs-toggle="dropdown">
-                                                        Acciones
+                                                        Actions
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-end">
                                                         <a class="dropdown-item"
                                                            href="{{ route('appoiments.show',$appoiment->id) }}">
-                                                            Ver
+                                                            View
                                                         </a>
                                                         <a class="dropdown-item"
                                                            href="{{ route('appoiments.edit',$appoiment->id) }}">
-                                                            Editar
+                                                            Edit
                                                         </a>
                                                         <form
                                                             action="{{ route('appoiments.destroy',$appoiment->id) }}"
@@ -136,7 +139,7 @@
                                                                     onclick="if(!confirm('Do you Want to Proceed?')){return false;}"
                                                                     class="dropdown-item text-red"><i
                                                                     class="fa fa-fw fa-trash"></i>
-                                                                Eliminar
+                                                                Delete
                                                             </button>
                                                         </form>
                                                     </div>

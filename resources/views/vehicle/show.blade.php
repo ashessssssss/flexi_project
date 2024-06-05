@@ -58,6 +58,10 @@
 {{ $vehicle->matricula }}
 </div>
 <div class="form-group">
+<strong>Image:</strong>
+{{ $vehicle->image }}
+</div>
+<div class="form-group">
 <strong>Id Marca:</strong>
 {{ $vehicle->id_marca }}
 </div>

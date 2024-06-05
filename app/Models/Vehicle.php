@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $id
  * @property $id_usuario
  * @property $matricula
+ * @property $image
  * @property $id_marca
  * @property $modelo
  * @property $año_salida_vh
@@ -20,6 +21,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $created_at
  * @property $updated_at
  *
+ * @property Appoiment[] $appoiments
  * @property Brand $brand
  * @property Category $category
  * @property User $user
@@ -32,6 +34,7 @@ class Vehicle extends Model
     static $rules = [
 		'id_usuario' => 'required',
 		'matricula' => 'required',
+		'image' => 'required',
 		'id_marca' => 'required',
 		'modelo' => 'required',
 		'año_salida_vh' => 'required',
@@ -48,9 +51,17 @@ class Vehicle extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_usuario','matricula','id_marca','modelo','año_salida_vh','color_vh','kilometraje','cilindros','id_categoria'];
+    protected $fillable = ['id_usuario','matricula','image','id_marca','modelo','año_salida_vh','color_vh','kilometraje','cilindros','id_categoria'];
 
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function appoiments()
+    {
+        return $this->hasMany('App\Models\Appoiment', 'id_vh', 'id');
+    }
+    
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */

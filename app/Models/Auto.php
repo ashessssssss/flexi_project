@@ -9,7 +9,7 @@ class Auto extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id_cliente', 'matricula', 'id_marca', 'modelo', 'año_salida_vh',
+        'id_usuario', 'matricula', 'id_marca', 'modelo', 'año_salida_vh',
         'color_vh', 'kilometraje', 'cilindros', 'id_categoria', 'image',
     ];
 }

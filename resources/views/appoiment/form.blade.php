@@ -1,11 +1,11 @@
 
 <div class="form-group mb-3">
-    <label class="form-label">   {{ Form::label('id_cliente') }}</label>
+    <label class="form-label">   {{ Form::label('id_usuario') }}</label>
     <div>
-        {{ Form::text('id_cliente', $appoiment->id_cliente, ['class' => 'form-control' .
-        ($errors->has('id_cliente') ? ' is-invalid' : ''), 'placeholder' => 'Id Cliente']) }}
-        {!! $errors->first('id_cliente', '<div class="invalid-feedback">:message</div>') !!}
-        <small class="form-hint">appoiment <b>id_cliente</b> instruction.</small>
+        {{ Form::text('id_usuario', $appoiment->id_usuario, ['class' => 'form-control' .
+        ($errors->has('id_usuario') ? ' is-invalid' : ''), 'placeholder' => 'Id Usuario']) }}
+        {!! $errors->first('id_usuario', '<div class="invalid-feedback">:message</div>') !!}
+        <small class="form-hint">appoiment <b>id_usuario</b> instruction.</small>
     </div>
 </div>
 <div class="form-group mb-3">
@@ -15,6 +15,15 @@
         ($errors->has('id_servicio') ? ' is-invalid' : ''), 'placeholder' => 'Id Servicio']) }}
         {!! $errors->first('id_servicio', '<div class="invalid-feedback">:message</div>') !!}
         <small class="form-hint">appoiment <b>id_servicio</b> instruction.</small>
+    </div>
+</div>
+<div class="form-group mb-3">
+    <label class="form-label">   {{ Form::label('id_vh') }}</label>
+    <div>
+        {{ Form::text('id_vh', $appoiment->id_vh, ['class' => 'form-control' .
+        ($errors->has('id_vh') ? ' is-invalid' : ''), 'placeholder' => 'Id Vh']) }}
+        {!! $errors->first('id_vh', '<div class="invalid-feedback">:message</div>') !!}
+        <small class="form-hint">appoiment <b>id_vh</b> instruction.</small>
     </div>
 </div>
 <div class="form-group mb-3">
@@ -45,20 +54,29 @@
     </div>
 </div>
 <div class="form-group mb-3">
-    <label class="form-label">   {{ Form::label('estado_emp') }}</label>
+    <label class="form-label">   {{ Form::label('estado_cita') }}</label>
     <div>
-        {{ Form::text('estado_emp', $appoiment->estado_emp, ['class' => 'form-control' .
-        ($errors->has('estado_emp') ? ' is-invalid' : ''), 'placeholder' => 'Estado Emp']) }}
-        {!! $errors->first('estado_emp', '<div class="invalid-feedback">:message</div>') !!}
-        <small class="form-hint">appoiment <b>estado_emp</b> instruction.</small>
+        {{ Form::text('estado_cita', $appoiment->estado_cita, ['class' => 'form-control' .
+        ($errors->has('estado_cita') ? ' is-invalid' : ''), 'placeholder' => 'Estado Cita']) }}
+        {!! $errors->first('estado_cita', '<div class="invalid-feedback">:message</div>') !!}
+        <small class="form-hint">appoiment <b>estado_cita</b> instruction.</small>
+    </div>
+</div>
+<div class="form-group mb-3">
+    <label class="form-label">   {{ Form::label('id_prod') }}</label>
+    <div>
+        {{ Form::text('id_prod', $appoiment->id_prod, ['class' => 'form-control' .
+        ($errors->has('id_prod') ? ' is-invalid' : ''), 'placeholder' => 'Id Prod']) }}
+        {!! $errors->first('id_prod', '<div class="invalid-feedback">:message</div>') !!}
+        <small class="form-hint">appoiment <b>id_prod</b> instruction.</small>
     </div>
 </div>
 
     <div class="form-footer">
         <div class="text-end">
             <div class="d-flex">
-                <a href="#" class="btn btn-danger">Cancelar</a>
-                <button type="submit" class="btn btn-primary ms-auto ajax-submit">Enviar</button>
+                <a href="#" class="btn btn-danger">Cancel</a>
+                <button type="submit" class="btn btn-primary ms-auto ajax-submit">Submit</button>
             </div>
         </div>
     </div>

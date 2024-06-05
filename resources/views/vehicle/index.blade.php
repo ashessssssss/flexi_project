@@ -87,6 +87,7 @@
                                     
 										<th>Id Usuario</th>
 										<th>Matricula</th>
+										<th>Image</th>
 										<th>Id Marca</th>
 										<th>Modelo</th>
 										<th>Año Salida Vh</th>
@@ -108,6 +109,7 @@
                                         
 											<td>{{ $vehicle->id_usuario }}</td>
 											<td>{{ $vehicle->matricula }}</td>
+											<td>{{ $vehicle->image }}</td>
 											<td>{{ $vehicle->id_marca }}</td>
 											<td>{{ $vehicle->modelo }}</td>
 											<td>{{ $vehicle->año_salida_vh }}</td>

@@ -18,6 +18,15 @@
     </div>
 </div>
 <div class="form-group mb-3">
+    <label class="form-label">   {{ Form::label('image') }}</label>
+    <div>
+        {{ Form::text('image', $vehicle->image, ['class' => 'form-control' .
+        ($errors->has('image') ? ' is-invalid' : ''), 'placeholder' => 'Image']) }}
+        {!! $errors->first('image', '<div class="invalid-feedback">:message</div>') !!}
+        <small class="form-hint">vehicle <b>image</b> instruction.</small>
+    </div>
+</div>
+<div class="form-group mb-3">
     <label class="form-label">   {{ Form::label('id_marca') }}</label>
     <div>
         {{ Form::text('id_marca', $vehicle->id_marca, ['class' => 'form-control' .

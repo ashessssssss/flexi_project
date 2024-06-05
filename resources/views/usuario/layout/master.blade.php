@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>Perfil &mdash; Usuario </title>
-  <link rel="icon" href="img/logo.jpeg" type="image/x-icon">
+  <link rel="icon" href="../img/logo.jpeg" type="image/x-icon">
 
 
   <!-- General CSS Files -->

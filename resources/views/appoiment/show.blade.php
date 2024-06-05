@@ -10,7 +10,7 @@
                 <div class="col">
                     <!-- Page pre-title -->
                     <div class="page-pretitle">
-                        Ver
+                        View
                     </div>
                     <h2 class="page-title">
                         {{ __('Appoiment ') }}
@@ -28,7 +28,7 @@
                                 <line x1="12" y1="5" x2="12" y2="19"/>
                                 <line x1="5" y1="12" x2="19" y2="12"/>
                             </svg>
-                            Lista de Citas
+                            Appoiment List
                         </a>
                     </div>
                 </div>
@@ -45,17 +45,21 @@
                     @endif
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Detalles de la Cita</h3>
+                            <h3 class="card-title">Appoiment Details</h3>
                         </div>
                         <div class="card-body">
                             
 <div class="form-group">
-<strong>Id Cliente:</strong>
-{{ $appoiment->id_cliente }}
+<strong>Id Usuario:</strong>
+{{ $appoiment->id_usuario }}
 </div>
 <div class="form-group">
 <strong>Id Servicio:</strong>
 {{ $appoiment->id_servicio }}
+</div>
+<div class="form-group">
+<strong>Id Vh:</strong>
+{{ $appoiment->id_vh }}
 </div>
 <div class="form-group">
 <strong>Fecha Cita:</strong>
@@ -71,7 +75,11 @@
 </div>
 <div class="form-group">
 <strong>Estado Cita:</strong>
-{{ $appoiment->estado_emp }}
+{{ $appoiment->estado_cita }}
+</div>
+<div class="form-group">
+<strong>Id Prod:</strong>
+{{ $appoiment->id_prod }}
 </div>
 
                         </div>

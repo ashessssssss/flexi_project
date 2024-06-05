@@ -33,13 +33,14 @@
           <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Vehículos</span></a>
           <ul class="dropdown-menu">
             <li><a class="nav-link" href="{{url("automoviles")}}">Agregar Vehículo</a></li>
-            <li><a class="nav-link" href="{{url("profile")}}">Ver mis Vehículos</a></li>
+            <li><a class="nav-link" href="{{url("automoviles/show")}}">Ver mis Vehículos</a></li>
+
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-th"></i> <span>Citas</span></a>
           <ul class="dropdown-menu">
-            <li><a class="nav-link" href="{{url("citas")}}">Agendar Cita</a></li>
+            <li><a class="nav-link" href="{{url("citas/create")}}">Agendar Cita</a></li>
             <li><a class="nav-link" href="{{url("citas")}}">Ver mis citas</a></li>
             
           </ul>
