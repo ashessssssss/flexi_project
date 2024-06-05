@@ -85,7 +85,7 @@
                                         </svg>
                                     </th>
                                     
-										<th>Id Per</th>
+										<th>Id Usuario</th>
 										<th>Fecha Ing Emp</th>
 										<th>Fecha Sali Emp</th>
 										<th>Estado Emp</th>
@@ -103,7 +103,7 @@
                                                    aria-label="Select worker"></td>
                                         <td>{{ ++$i }}</td>
                                         
-											<td>{{ $worker->id_per }}</td>
+											<td>{{ $worker->id_usuario }}</td>
 											<td>{{ $worker->fecha_ing_emp }}</td>
 											<td>{{ $worker->fecha_sali_emp }}</td>
 											<td>{{ $worker->estado_emp }}</td>

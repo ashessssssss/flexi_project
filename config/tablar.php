@@ -3,14 +3,14 @@
 return [
 
 
-    'title' => 'Productos',
+    'title' => 'Admin - Dashboard',
     'title_prefix' => '',
     'title_postfix' => '',
-    'bottom_title' => 'Tablar',
+    'bottom_title' => 'Ponchitos',
     'current_version' => 'v4.8',
 
 
-    'logo' => '<b>Tab</b>LAR',
+    'logo' => '<b>Flexi</b>Glide',
     'logo_img_alt' => 'Admin Logo',
 
     /*
@@ -26,7 +26,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'img/Logo.jpeg',
+            'path' => 'public/img/Logo.jpeg',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -139,9 +139,9 @@ return [
             'url' => '/products'
         ],
         [
-            'text' => 'Personas',
+            'text' => 'Usuarios',
             'icon' => 'ti ti-user',
-            'url' => '/people'
+            'url' => '/users'
         ],
         [
             'text' => 'Empleados',
@@ -199,19 +199,9 @@ return [
             'url' => '/type-products'
         ],
 
-        [
-            'text' => 'Support 1',
-            'url' => '/support',
-            'icon' => 'ti ti-help',
-            'active' => ['support1'],
-            'submenu' => [
-                [
-                    'text' => 'Ticket',
-                    'url' => 'support1',
-                    'icon' => 'ti ti-article',
-                ]
-            ],
-        ]
+    
+
+        
 
     ],
 

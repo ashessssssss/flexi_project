@@ -1,11 +1,11 @@
 
 <div class="form-group mb-3">
-    <label class="form-label">   {{ Form::label('id_cliente') }}</label>
+    <label class="form-label">   {{ Form::label('id_usuario') }}</label>
     <div>
-        {{ Form::text('id_cliente', $vehicle->id_cliente, ['class' => 'form-control' .
-        ($errors->has('id_cliente') ? ' is-invalid' : ''), 'placeholder' => 'Id Cliente']) }}
-        {!! $errors->first('id_cliente', '<div class="invalid-feedback">:message</div>') !!}
-        <small class="form-hint">vehicle <b>id_cliente</b> instruction.</small>
+        {{ Form::text('id_usuario', $vehicle->id_usuario, ['class' => 'form-control' .
+        ($errors->has('id_usuario') ? ' is-invalid' : ''), 'placeholder' => 'Id Usuario']) }}
+        {!! $errors->first('id_usuario', '<div class="invalid-feedback">:message</div>') !!}
+        <small class="form-hint">vehicle <b>id_usuario</b> instruction.</small>
     </div>
 </div>
 <div class="form-group mb-3">

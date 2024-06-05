@@ -26,18 +26,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected function redirectTo(){
-        $user = Auth::user();
+    protected $redirectTo = '/';
 
-        // Verifica si el usuario tiene el rol de administrador
-        if ($user->roles()->where('id', 1)->exists()) {
-            return '/home';
-        } else {
-            return '/';
-        }
-
-
-    }
    
 
     /**

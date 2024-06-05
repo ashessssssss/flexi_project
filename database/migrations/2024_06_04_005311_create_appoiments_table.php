@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('fecha_cita');
             $table->time('hora_cita');
             $table->unsignedBigInteger('id_empleado');
-            $table->enum('estado_cita',['ACTIVA','COMPLETADA','CANCELADA'])->default('ACTIVO');
+            $table->enum('estado_cita',['EN PROCESO','COMPLETADA','CANCELADA'])->default('EN PROCESO');
             $table->unsignedBigInteger('id_prod');
 
 

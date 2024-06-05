@@ -17,7 +17,6 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             [
                 'name' =>'Admin User',
-                'username' =>'adminUser',
                 'email' => 'admin@gmail.com',
                 'role' => 'admin',
                 'status' => 'active',
@@ -25,7 +24,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' =>'Worker User',
-                'usernanme' =>'workerUser',
+
                 'email' => 'worker@gmail.com',
                 'role' => 'worker',
                 'status' => 'active',
@@ -33,7 +32,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' =>'User User',
-                'usernanme' =>'userUser',
+               
                 'email' => 'user@gmail.com',
                 'role' => 'user',
                 'status' => 'active',

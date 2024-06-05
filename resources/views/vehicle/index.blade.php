@@ -85,7 +85,7 @@
                                         </svg>
                                     </th>
                                     
-										<th>Id Cliente</th>
+										<th>Id Usuario</th>
 										<th>Matricula</th>
 										<th>Id Marca</th>
 										<th>Modelo</th>
@@ -106,7 +106,7 @@
                                                    aria-label="Select vehicle"></td>
                                         <td>{{ ++$i }}</td>
                                         
-											<td>{{ $vehicle->id_cliente }}</td>
+											<td>{{ $vehicle->id_usuario }}</td>
 											<td>{{ $vehicle->matricula }}</td>
 											<td>{{ $vehicle->id_marca }}</td>
 											<td>{{ $vehicle->modelo }}</td>

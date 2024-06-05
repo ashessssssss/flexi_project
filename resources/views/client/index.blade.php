@@ -1,7 +1,7 @@
 @extends('tablar::page')
 
 @section('title')
-    Clientes
+    Client
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@
                 <div class="col">
                     <!-- Page pre-title -->
                     <div class="page-pretitle">
-                        Lista
+                        List
                     </div>
                     <h2 class="page-title">
                         {{ __('Client ') }}
@@ -30,7 +30,7 @@
                                 <line x1="12" y1="5" x2="12" y2="19"/>
                                 <line x1="5" y1="12" x2="19" y2="12"/>
                             </svg>
-                            Crear Cliente
+                            Create Client
                         </a>
                     </div>
                 </div>
@@ -47,20 +47,20 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Cliente</h3>
+                            <h3 class="card-title">Client</h3>
                         </div>
                         <div class="card-body border-bottom py-3">
                             <div class="d-flex">
                                 <div class="text-muted">
-                                    Mostrar
+                                    Show
                                     <div class="mx-2 d-inline-block">
                                         <input type="text" class="form-control form-control-sm" value="10" size="3"
                                                aria-label="Invoices count">
                                     </div>
-                                    entradas
+                                    entries
                                 </div>
                                 <div class="ms-auto text-muted">
-                                    Buscar:
+                                    Search:
                                     <div class="ms-2 d-inline-block">
                                         <input type="text" class="form-control form-control-sm"
                                                aria-label="Search invoice">
@@ -85,10 +85,10 @@
                                         </svg>
                                     </th>
                                     
-										<th>Id Persona</th>
+										<th>Id Usuario</th>
 										<th>Fecha Registro</th>
 										<th>Fecha Salida</th>
-										<th>Estado Cliente</th>
+										<th>Estado</th>
 
                                     <th class="w-1"></th>
                                 </tr>
@@ -101,7 +101,7 @@
                                                    aria-label="Select client"></td>
                                         <td>{{ ++$i }}</td>
                                         
-											<td>{{ $client->id_per }}</td>
+											<td>{{ $client->id_usuario }}</td>
 											<td>{{ $client->fecha_registro }}</td>
 											<td>{{ $client->fecha_salida }}</td>
 											<td>{{ $client->estado }}</td>
@@ -111,16 +111,16 @@
                                                 <div class="dropdown">
                                                     <button class="btn dropdown-toggle align-text-top"
                                                             data-bs-toggle="dropdown">
-                                                        Acciones
+                                                        Actions
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-end">
                                                         <a class="dropdown-item"
                                                            href="{{ route('clients.show',$client->id) }}">
-                                                            Ver
+                                                            View
                                                         </a>
                                                         <a class="dropdown-item"
                                                            href="{{ route('clients.edit',$client->id) }}">
-                                                            Editar
+                                                            Edit
                                                         </a>
                                                         <form
                                                             action="{{ route('clients.destroy',$client->id) }}"
@@ -131,7 +131,7 @@
                                                                     onclick="if(!confirm('Do you Want to Proceed?')){return false;}"
                                                                     class="dropdown-item text-red"><i
                                                                     class="fa fa-fw fa-trash"></i>
-                                                                Eliminar
+                                                                Delete
                                                             </button>
                                                         </form>
                                                     </div>

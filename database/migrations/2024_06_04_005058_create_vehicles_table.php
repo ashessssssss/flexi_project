@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_cliente');
+            $table->unsignedBigInteger('id_usuario');
             $table->string('matricula',20);
             $table->unsignedBigInteger('id_marca');
             $table->string('modelo');
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->integer('cilindros');
             $table->unsignedBigInteger('id_categoria');
 
-            $table->foreign('id_cliente')->references('id')->on('clients')->onDelete('cascade');
+            $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('id_marca')->references('id')->on('brands')->onDelete('cascade');
             $table->foreign('id_categoria')->references('id')->on('categories')->onDelete('cascade');
 

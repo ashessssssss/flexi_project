@@ -50,8 +50,8 @@
                         <div class="card-body">
                             
 <div class="form-group">
-<strong>Id Per:</strong>
-{{ $worker->id_per }}
+<strong>Id Usuario:</strong>
+{{ $worker->id_usuario }}
 </div>
 <div class="form-group">
 <strong>Fecha Ing Emp:</strong>

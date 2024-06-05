@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class Vehicle
  *
  * @property $id
- * @property $id_cliente
+ * @property $id_usuario
  * @property $matricula
  * @property $id_marca
  * @property $modelo
@@ -22,7 +22,7 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property Brand $brand
  * @property Category $category
- * @property Client $client
+ * @property User $user
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -30,7 +30,7 @@ class Vehicle extends Model
 {
     
     static $rules = [
-		'id_cliente' => 'required',
+		'id_usuario' => 'required',
 		'matricula' => 'required',
 		'id_marca' => 'required',
 		'modelo' => 'required',
@@ -48,7 +48,7 @@ class Vehicle extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_cliente','matricula','id_marca','modelo','año_salida_vh','color_vh','kilometraje','cilindros','id_categoria'];
+    protected $fillable = ['id_usuario','matricula','id_marca','modelo','año_salida_vh','color_vh','kilometraje','cilindros','id_categoria'];
 
 
     /**
@@ -70,9 +70,9 @@ class Vehicle extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function client()
+    public function user()
     {
-        return $this->hasOne('App\Models\Client', 'id', 'id_cliente');
+        return $this->hasOne('App\Models\User', 'id', 'id_usuario');
     }
     
 

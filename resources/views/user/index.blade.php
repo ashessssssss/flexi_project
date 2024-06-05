@@ -1,7 +1,7 @@
 @extends('tablar::page')
 
 @section('title')
-    Persona
+    User
 @endsection
 
 @section('content')
@@ -12,16 +12,16 @@
                 <div class="col">
                     <!-- Page pre-title -->
                     <div class="page-pretitle">
-                        Lista
+                        List
                     </div>
                     <h2 class="page-title">
-                        {{ __('Person ') }}
+                        {{ __('User ') }}
                     </h2>
                 </div>
                 <!-- Page title actions -->
                 <div class="col-12 col-md-auto ms-auto d-print-none">
                     <div class="btn-list">
-                        <a href="{{ route('people.create') }}" class="btn btn-primary d-none d-sm-inline-block">
+                        <a href="{{ route('users.create') }}" class="btn btn-primary d-none d-sm-inline-block">
                             <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
                                  viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -30,7 +30,7 @@
                                 <line x1="12" y1="5" x2="12" y2="19"/>
                                 <line x1="5" y1="12" x2="19" y2="12"/>
                             </svg>
-                            Crear Persona
+                            Create User
                         </a>
                     </div>
                 </div>
@@ -47,20 +47,20 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Persona</h3>
+                            <h3 class="card-title">User</h3>
                         </div>
                         <div class="card-body border-bottom py-3">
                             <div class="d-flex">
                                 <div class="text-muted">
-                                    Mostrar
+                                    Show
                                     <div class="mx-2 d-inline-block">
                                         <input type="text" class="form-control form-control-sm" value="10" size="3"
                                                aria-label="Invoices count">
                                     </div>
-                                    entradas
+                                    entries
                                 </div>
                                 <div class="ms-auto text-muted">
-                                    Buscar:
+                                    Search:
                                     <div class="ms-2 d-inline-block">
                                         <input type="text" class="form-control form-control-sm"
                                                aria-label="Search invoice">
@@ -85,53 +85,53 @@
                                         </svg>
                                     </th>
                                     
-										<th>Cedula Persona</th>
-										<th>Nombre Persona</th>
-										<th>Apellido Persona</th>
-										<th>Sexo Persona</th>
-										<th>Fecha de Nacimiento Persona</th>
-										<th>Telefono Persona</th>
-										<th>Correo Persona</th>
-										<th>Estado Persona</th>
+										<th>Name</th>
+										<th>Gender</th>
+										<th>Image</th>
+										<th>Phone</th>
+										<th>Email</th>
+										<th>Birthdate</th>
+										<th>Role</th>
+										<th>Status</th>
 
                                     <th class="w-1"></th>
                                 </tr>
                                 </thead>
 
                                 <tbody>
-                                @forelse ($people as $person)
+                                @forelse ($users as $user)
                                     <tr>
                                         <td><input class="form-check-input m-0 align-middle" type="checkbox"
-                                                   aria-label="Select person"></td>
+                                                   aria-label="Select user"></td>
                                         <td>{{ ++$i }}</td>
                                         
-											<td>{{ $person->cedula_per }}</td>
-											<td>{{ $person->nombre_per }}</td>
-											<td>{{ $person->apellido_per }}</td>
-											<td>{{ $person->sexo_per }}</td>
-											<td>{{ $person->fecha_nac_per }}</td>
-											<td>{{ $person->telefono_per }}</td>
-											<td>{{ $person->correo_per }}</td>
-											<td>{{ $person->estado_per }}</td>
+											<td>{{ $user->name }}</td>
+											<td>{{ $user->gender }}</td>
+											<td>{{ $user->image }}</td>
+											<td>{{ $user->phone }}</td>
+											<td>{{ $user->email }}</td>
+											<td>{{ $user->birthdate }}</td>
+											<td>{{ $user->role }}</td>
+											<td>{{ $user->status }}</td>
 
                                         <td>
                                             <div class="btn-list flex-nowrap">
                                                 <div class="dropdown">
                                                     <button class="btn dropdown-toggle align-text-top"
                                                             data-bs-toggle="dropdown">
-                                                        Acciones
+                                                        Actions
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-end">
                                                         <a class="dropdown-item"
-                                                           href="{{ route('people.show',$person->id) }}">
-                                                            Ver
+                                                           href="{{ route('users.show',$user->id) }}">
+                                                            View
                                                         </a>
                                                         <a class="dropdown-item"
-                                                           href="{{ route('people.edit',$person->id) }}">
-                                                            Editar
+                                                           href="{{ route('users.edit',$user->id) }}">
+                                                            Edit
                                                         </a>
                                                         <form
-                                                            action="{{ route('people.destroy',$person->id) }}"
+                                                            action="{{ route('users.destroy',$user->id) }}"
                                                             method="POST">
                                                             @csrf
                                                             @method('DELETE')
@@ -139,7 +139,7 @@
                                                                     onclick="if(!confirm('Do you Want to Proceed?')){return false;}"
                                                                     class="dropdown-item text-red"><i
                                                                     class="fa fa-fw fa-trash"></i>
-                                                                Eliminar
+                                                                Delete
                                                             </button>
                                                         </form>
                                                     </div>
@@ -155,7 +155,7 @@
                             </table>
                         </div>
                        <div class="card-footer d-flex align-items-center">
-                            {!! $people->links('tablar::pagination') !!}
+                            {!! $users->links('tablar::pagination') !!}
                         </div>
                     </div>
                 </div>

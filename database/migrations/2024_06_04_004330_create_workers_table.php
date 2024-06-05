@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('workers', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_per');
+            $table->unsignedBigInteger('id_usuario');
             $table->date('fecha_ing_emp');
             $table->date('fecha_sali_emp')->nullable();
             $table->string('estado_emp');
@@ -21,7 +21,7 @@ return new class extends Migration
             $table->decimal('sueldo');
             $table->timestamps();
 
-            $table->foreign('id_per')->references('id')->on('people')->onDelete('cascade');
+            $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('id_puesto')->references('id')->on('positions')->onDelete('cascade');
         });
     }

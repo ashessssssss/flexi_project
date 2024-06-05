@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class Worker
  *
  * @property $id
- * @property $id_per
+ * @property $id_usuario
  * @property $fecha_ing_emp
  * @property $fecha_sali_emp
  * @property $estado_emp
@@ -17,8 +17,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property $created_at
  * @property $updated_at
  *
- * @property Person $person
+ * @property Appoiment[] $appoiments
  * @property Position $position
+ * @property User $user
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -26,7 +27,7 @@ class Worker extends Model
 {
     
     static $rules = [
-		'id_per' => 'required',
+		'id_usuario' => 'required',
 		'fecha_ing_emp' => 'required',
 		'estado_emp' => 'required',
 		'id_puesto' => 'required',
@@ -40,15 +41,15 @@ class Worker extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_per','fecha_ing_emp','fecha_sali_emp','estado_emp','id_puesto','sueldo'];
+    protected $fillable = ['id_usuario','fecha_ing_emp','fecha_sali_emp','estado_emp','id_puesto','sueldo'];
 
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function person()
+    public function appoiments()
     {
-        return $this->hasOne('App\Models\Person', 'id', 'id_per');
+        return $this->hasMany('App\Models\Appoiment', 'id_empleado', 'id');
     }
     
     /**
@@ -57,6 +58,14 @@ class Worker extends Model
     public function position()
     {
         return $this->hasOne('App\Models\Position', 'id', 'id_puesto');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function user()
+    {
+        return $this->hasOne('App\Models\User', 'id', 'id_usuario');
     }
     
 

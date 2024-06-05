@@ -1,0 +1,18 @@
+.sidebar {
+  position: fixed;
+  top: 56px; /* Ajusta la altura de la navbar si es necesario */
+  left: 0;
+  height: calc(100% - 56px); /* Ajusta la altura para no superponer la navbar */
+  width: 250px; /* Ajusta el ancho del sidebar según sea necesario */
+  background-color: black; /* Color de fondo del sidebar */
+  color: white; /* Color de texto blanco por defecto */
+  padding-top: 20px; /* Espacio para el contenido dentro del sidebar */
+}
+
+.sidebar .nav-link {
+  color: white; /* Color de texto blanco */
+}
+
+.sidebar .nav-link:hover {
+  color: yellow; /* Color de texto amarillo al pasar el ratón */
+}

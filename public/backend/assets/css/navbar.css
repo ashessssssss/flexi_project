@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-custom {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: black; /* Ajusta el color de fondo según sea necesario */
+  z-index: 1000; /* Asegúrate de que la navbar esté sobre otros elementos */
+}
+
+.sidebar {
+  position: fixed;
+  top: 56px; /* Ajusta la altura de la navbar si es necesario */
+  left: 0;
+  height: calc(100% - 56px); /* Ajusta la altura para no superponer la navbar */
+  width: 250px; /* Ajusta el ancho del sidebar según sea necesario */
+  background-color: #f8f9fa; /* Color de fondo del sidebar */
+  padding-top: 20px; /* Espacio para el contenido dentro del sidebar */
+}
+
+.content {
+  margin-left: 250px; /* Debe coincidir con el ancho del sidebar */
+  padding: 20px;
+  margin-top: 56px; /* Altura de la navbar */
+}
+
+.navbar-bg {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px; /* Altura de la navbar */
+  background-color: #000000;
+  z-index: -1;
+}

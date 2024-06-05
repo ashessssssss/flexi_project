@@ -2,48 +2,98 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+/**
+ * Class User
+ *
+ * @property $id
+ * @property $name
+ * @property $gender
+ * @property $image
+ * @property $phone
+ * @property $email
+ * @property $birthdate
+ * @property $role
+ * @property $status
+ * @property $email_verified_at
+ * @property $password
+ * @property $remember_token
+ * @property $created_at
+ * @property $updated_at
+ *
+ * @property Client[] $clients
+ * @property Vehicle[] $vehicles
+ * @property Worker[] $workers
+ * @package App
+ * @mixin \Illuminate\Database\Eloquent\Builder
+ */
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, Notifiable;
+
+    static $rules = [
+        'name' => 'required',
+        'gender' => 'required',
+        'image' => 'required',
+        'email' => 'required',
+        'role' => 'required',
+        'status' => 'required',
+    ];
+
+    protected $perPage = 20;
 
     /**
-     * The attributes that are mass assignable.
+     * Attributes that should be mass-assignable.
      *
-     * @var array<int, string>
+     * @var array
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'name', 'gender', 'image', 'phone', 'email', 'birthdate', 'role', 'status', 'password', 'email_verified_at', 'remember_token'
     ];
 
     /**
-     * The attributes that should be hidden for serialization.
+     * Attributes that should be hidden for arrays.
      *
-     * @var array<int, string>
+     * @var array
      */
     protected $hidden = [
-        'password',
-        'remember_token',
+        'password', 'remember_token',
     ];
 
     /**
-     * The attributes that should be cast.
+     * Attributes that should be cast to native types.
      *
-     * @var array<string, string>
+     * @var array
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password' => 'hashed',
+        'birthdate' => 'date',
     ];
-    public function person()
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function clients()
     {
-        return $this->hasOne(Person::class);
+        return $this->hasMany('App\Models\Client', 'id_usuario', 'id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function vehicles()
+    {
+        return $this->hasMany('App\Models\Vehicle', 'id_usuario', 'id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function workers()
+    {
+        return $this->hasMany('App\Models\Worker', 'id_usuario', 'id');
     }
 }

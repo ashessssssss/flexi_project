@@ -6,20 +6,14 @@
   <title>Dropdown Menu Example</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <style>
-        /* Asegúrate de que el navbar ocupe todo el ancho y esté alineado correctamente */
-.navbar {
-  width: 100%;
-  padding: 0.5rem 1rem; /* Ajusta el padding según sea necesario */
-}
-  </style>
+  
 
 
 
 
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg main-navbar">
+  <nav class="navbar navbar-expand-lg main-navbar navbar-custom">
     <form class="form-inline mr-auto">
       <ul class="navbar-nav mr-3">
         <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>

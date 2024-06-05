@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_per');
+            $table->unsignedBigInteger('id_usuario');
             $table->date('fecha_registro');
             $table->date('fecha_salida')->nullable();
             $table->enum('estado',['ACTIVO', 'INACTIVO'])->default('ACTIVO');
-            $table->foreign('id_per')->references('id')->on('people')->onDelete('cascade');
+            $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
 
 
 

@@ -11,7 +11,7 @@
 
 .sidebar-brand {
   font-size: 1.75rem;
-  color: #4e73df; /* Color principal del tema */
+  color: #060606; /* Color principal del tema */
   text-align: center;
   padding: 1rem;
 }
@@ -47,7 +47,7 @@
 
 .sidebar-menu li a:hover {
   background-color: #f8f9fc;
-  color: #4e73df;
+  color: #000000;
   border-radius: 0.35rem;
 }
 
@@ -63,7 +63,7 @@
 }
 
 .sidebar-menu li .dropdown-menu a:hover {
-  color: #4e73df;
+  color: #000000;
   background-color: #e2e6ea; /* Add background color on hover */
   border-radius: 0.35rem; /* Add border-radius to match the sidebar links */
 }

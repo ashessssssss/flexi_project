@@ -36,6 +36,10 @@ class ProfileController extends Controller
 
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->birthdate = $request->birthdate;
+        $user->phone = $request->phone;
+
+
        
         $user->save();
 

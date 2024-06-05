@@ -2,6 +2,8 @@
 
 @section('content')
     <!-- Page header -->
+    <link rel="icon" href="img/logo.jpeg" type="image/x-icon">
+
     <div class="page-header d-print-none">
         <div class="container-xl">
             <div class="row g-2 align-items-center">
