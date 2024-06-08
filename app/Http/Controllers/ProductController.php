@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
+
 
 /**
  * Class ProductController
@@ -105,5 +107,16 @@ class ProductController extends Controller
 
         return redirect()->route('products.index')
             ->with('success', 'Product deleted successfully');
+    }
+
+    public function downloadPdf()
+    {
+        $product = Product::all();
+
+       view()->share('products.pdf',$product);
+
+        $pdf = PDF::loadView('product.pdf', ['products' => $product]);
+
+        return $pdf->download('product.pdf');
     }
 }

@@ -32,6 +32,14 @@
                             </svg>
                             Create Product
                         </a>
+                        <br>
+                        <br>
+
+                        <div class="row">
+              <div class="col-xl-12 text-right">
+                  <a href="{{ route('product.pdf') }}" class="btn btn-success btn-sm">Export to PDF</a>
+              </div>
+          </div>
                     </div>
                 </div>
             </div>

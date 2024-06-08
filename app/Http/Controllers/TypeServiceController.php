@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\TypeService;
 use Illuminate\Http\Request;
 
+
 /**
  * Class TypeServiceController
  * @package App\Http\Controllers
@@ -106,4 +107,6 @@ class TypeServiceController extends Controller
         return redirect()->route('type-services.index')
             ->with('success', 'TypeService deleted successfully');
     }
+
+    
 }

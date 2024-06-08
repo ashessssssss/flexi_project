@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
+
 use Illuminate\Http\Request;
 
 /**
@@ -105,5 +107,15 @@ class ServiceController extends Controller
 
         return redirect()->route('services.index')
             ->with('success', 'Service deleted successfully');
+    }
+    public function downloadPdf()
+    {
+        $service = Service::all();
+
+       view()->share('services.pdf',$service);
+
+        $pdf = PDF::loadView('service.pdf', ['services' => $service]);
+
+        return $pdf->download('service.pdf');
     }
 }

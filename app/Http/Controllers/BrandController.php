@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Brand;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
+
 
 /**
  * Class BrandController
@@ -105,5 +107,16 @@ class BrandController extends Controller
 
         return redirect()->route('brands.index')
             ->with('success', 'Brand deleted successfully');
+    }
+
+    public function downloadPdf()
+    {
+        $brand = Brand::all();
+
+       view()->share('brands.pdf',$brand);
+
+        $pdf = PDF::loadView('brand.pdf', ['brands' => $brand]);
+
+        return $pdf->download('brand.pdf');
     }
 }

@@ -32,6 +32,14 @@
                             </svg>
                             Create Vehicle
                         </a>
+                        <br>
+                        <br>
+
+                        <div class="row">
+              <div class="col-xl-12 text-right">
+                  <a href="{{ route('vehicle.pdf') }}" class="btn btn-success btn-sm">Export to PDF</a>
+              </div>
+          </div>
                     </div>
                 </div>
             </div>

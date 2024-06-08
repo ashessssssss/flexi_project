@@ -73,6 +73,10 @@
 <strong>Sueldo:</strong>
 {{ $worker->sueldo }}
 </div>
+<div class="form-group">
+<strong>Nombre Emp:</strong>
+{{ $worker->nombre_emp }}
+</div>
 
                         </div>
                     </div>

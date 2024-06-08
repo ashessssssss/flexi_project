@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
+
 
 /**
  * Class ClientController
@@ -105,5 +107,15 @@ class ClientController extends Controller
 
         return redirect()->route('clients.index')
             ->with('success', 'Client deleted successfully');
+    }
+    public function downloadPdf()
+    {
+        $client = Client::all();
+
+       view()->share('clients.pdf',$client);
+
+        $pdf = PDF::loadView('client.pdf', ['clients' => $client]);
+
+        return $pdf->download('client.pdf');
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\TypeProduct;
 use Illuminate\Http\Request;
 
+
 /**
  * Class TypeProductController
  * @package App\Http\Controllers
@@ -106,4 +107,5 @@ class TypeProductController extends Controller
         return redirect()->route('type-products.index')
             ->with('success', 'TypeProduct deleted successfully');
     }
+    
 }

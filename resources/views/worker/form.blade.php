@@ -53,6 +53,15 @@
         <small class="form-hint">worker <b>sueldo</b> instruction.</small>
     </div>
 </div>
+<div class="form-group mb-3">
+    <label class="form-label">   {{ Form::label('nombre_emp') }}</label>
+    <div>
+        {{ Form::text('nombre_emp', $worker->nombre_emp, ['class' => 'form-control' .
+        ($errors->has('nombre_emp') ? ' is-invalid' : ''), 'placeholder' => 'Nombre Emp']) }}
+        {!! $errors->first('nombre_emp', '<div class="invalid-feedback">:message</div>') !!}
+        <small class="form-hint">worker <b>nombre_emp</b> instruction.</small>
+    </div>
+</div>
 
     <div class="form-footer">
         <div class="text-end">

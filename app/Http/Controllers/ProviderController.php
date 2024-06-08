@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Provider;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
+
 
 /**
  * Class ProviderController
@@ -105,5 +107,16 @@ class ProviderController extends Controller
 
         return redirect()->route('providers.index')
             ->with('success', 'Provider deleted successfully');
+    }
+
+    public function downloadPdf()
+    {
+        $provider = Provider::all();
+
+       view()->share('providers.pdf',$provider);
+
+        $pdf = PDF::loadView('provider.pdf', ['providers' => $provider]);
+
+        return $pdf->download('provider.pdf');
     }
 }

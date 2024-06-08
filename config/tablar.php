@@ -26,7 +26,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'public/img/Logo.jpeg',
+            'path' => '../img/Logo.jpeg',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -197,6 +197,21 @@ return [
             'text' => 'Tipo de producto',
             'icon' => 'ti ti-tag',
             'url' => '/type-products'
+        ],
+        [
+            'text' => 'Facturas',
+            'icon' => 'ti ti-receipt',
+            'url' => '/receipts'
+        ],
+        [
+            'text' => 'Entrada Inventario',
+            'icon' => 'ti ti-folder',
+            'url' => '/inventaries'
+        ],
+        [
+            'text' => 'Salida Inventario',
+            'icon' => 'ti ti-folder',
+            'url' => '/inventory-outputs'
         ],
 
     

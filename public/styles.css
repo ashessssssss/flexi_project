@@ -6,13 +6,6 @@
 	--dark-color: #151515;
 }
 
-:root{
-	--main-color:#f8d718;
-	--sub-color:#000000;
-	--white:#fff;
-	--border:.1rem solid rgba(220, 198, 156, .3);
- }
-
 html {
 	font-size: 62.5%;
 	font-family: 'Poppins', sans-serif;
@@ -24,12 +17,10 @@ html {
 	box-sizing: border-box;
 }
 
-/* ********************************** */
-/*             UTILIDADES             */
-/* ********************************** */
 .container {
 	max-width: 120rem;
 	margin: 0 auto;
+	padding: 0 1rem;
 }
 
 .heading-1 {
@@ -38,9 +29,6 @@ html {
 	font-size: 3rem;
 }
 
-/* ********************************** */
-/*               HEADER               */
-/* ********************************** */
 .container-hero {
 	background-color: var(--background-color);
 }
@@ -73,16 +61,11 @@ html {
 	gap: 0.5rem;
 }
 
-.container-logo i {
-	font-size: 3rem;
-}
-
-.container-logo h1 a {
-	text-decoration: none;
-	color: #000;
+.container-logo h1 {
 	font-size: 3rem;
 	text-transform: uppercase;
 	letter-spacing: -1px;
+	color: var(--dark-color);
 }
 
 .container-user {
@@ -98,27 +81,16 @@ html {
 	border-right: 1px solid #e2e2e2;
 }
 
-.container-user .fa-basket-shopping {
-	font-size: 3rem;
-	color: var(--primary-color);
-	padding-left: 1rem;
-}
-
-.content-shopping-cart {
-	display: flex;
-	flex-direction: column;
-}
-
-/* ************* NAVBAR ************* */
 .container-navbar {
 	background-color: var(--primary-color);
 }
 
 .navbar {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	padding: 1rem 0;
+	position: relative;
 }
 
 .navbar .fa-bars {
@@ -164,81 +136,8 @@ html {
 	color: #fff;
 }
 
-
-
-
-
-
-
-
-
-
-.banner{
-	background-image: url("img/Bannerflexiglide.JPG");
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.search-form {
-	position: relative;
-	display: flex;
-	align-items: center;
-	border: 2px solid #fff;
-	border-radius: 2rem;
-	background-color: #fff;
-	height: 4.4rem;
-	overflow: hidden;
-}
-
-.search-form input {
-	outline: none;
-	font-family: inherit;
-	border: none;
-	width: 25rem;
-	font-size: 1.4rem;
-	padding: 0 2rem;
-	color: #777;
-	cursor: pointer;
-}
-
-.search-form input::-webkit-search-cancel-button {
-	appearance: none;
-}
-
-.search-form .btn-search {
-	border: none;
-	background-color: var(--primary-color);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100%;
-	padding: 1rem;
-}
-
-.btn-search i {
-	font-size: 2rem;
-	color: #fff;
-}
-
-/* ********************************** */
-/*               BANNER               */
-/* ********************************** */
 .banner {
-	background-image: linear-gradient(100deg, #000000, #00000020),
-		url('img/Bannerflexiglide.JPG');
+	background-image: linear-gradient(100deg, #000000, #00000020), url('img/Bannerflexiglide.JPG');
 	height: 60rem;
 	background-size: cover;
 	background-position: center;
@@ -248,19 +147,19 @@ html {
 	max-width: 100rem;
 	margin: 0 auto;
 	padding: 25rem 0;
-
+	text-align: center;
 }
 
 .content-banner p {
 	color: var(--primary-color);
-	font-size: 2.0rem;
+	font-size: 2rem;
 	margin-bottom: 1rem;
 	font-weight: 500;
 }
 
 .content-banner h2 {
 	color: #fff;
-	font-size: 4.0rem;
+	font-size: 4rem;
 	font-weight: 500;
 	line-height: 1.2;
 }
@@ -276,16 +175,10 @@ html {
 	border-radius: 4rem;
 }
 
-/* ********************************** */
-/*            MAIN CONTENT            */
-/* ********************************** */
 .main-content {
 	background-color: var(--background-color);
 }
 
-/* ********************************** */
-/*              FEATURES              */
-/* ********************************** */
 .container-features {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
@@ -298,10 +191,9 @@ html {
 	align-items: center;
 	justify-content: center;
 	gap: 1.5rem;
-
 	background-color: #fff;
 	border-radius: 1rem;
-	padding: 1.5rem 0;
+	padding: 1.5rem;
 }
 
 .card-feature i {
@@ -326,10 +218,6 @@ html {
 	font-weight: 500;
 }
 
-/* ********************************** */
-/*             CATEGORIES             */
-/* ********************************** */
-
 .top-categories {
 	display: flex;
 	flex-direction: column;
@@ -351,27 +239,33 @@ html {
 	justify-content: center;
 	border-radius: 2rem;
 	gap: 2rem;
+	background-color: #f9f5f0;
+	position: relative;
+}
+
+.card-category img {
+	width: auto;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 2rem;
 }
 
 .category-moca {
-	background-image: linear-gradient(#00000080, #00000080),
-		url('img/moca-category.jpg');
+	background-image: linear-gradient(#00000080, #00000080), url('img/moca-category.jpg');
 	background-size: cover;
 	background-position: bottom;
 	background-repeat: no-repeat;
 }
 
 .category-capuchino {
-	background-image: linear-gradient(#00000080, #00000080),
-		url('img/capuchino-category.jpg');
+	background-image: linear-gradient(#00000080, #00000080), url('img/capuchino-category.jpg');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 }
 
 .category-expreso {
-	background-image: linear-gradient(#00000080, #00000080),
-		url('img/expreso-category.jpg');
+	background-image: linear-gradient(#00000080, #00000080), url('img/expreso-category.jpg');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -405,9 +299,6 @@ html {
 	color: var(--primary-color);
 }
 
-/* ********************************** */
-/*            TOP PRODUCTS            */
-/* ********************************** */
 .top-products {
 	display: flex;
 	flex-direction: column;
@@ -442,7 +333,6 @@ html {
 	color: #fff;
 }
 
-/* Products */
 .container-products {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
@@ -483,7 +373,6 @@ html {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
-
 	position: absolute;
 	top: 0;
 	right: -3rem;
@@ -494,7 +383,6 @@ html {
 .button-group span {
 	border: 1px solid var(--primary-color);
 	padding: 0.8rem;
-
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -542,7 +430,6 @@ html {
 .content-card-product h3 {
 	grid-row: 2/3;
 	grid-column: 1/-1;
-
 	font-weight: 400;
 	font-size: 1.6rem;
 	margin-bottom: 1rem;
@@ -560,7 +447,6 @@ html {
 	border-radius: 50%;
 	cursor: pointer;
 	transition: all 0.4s ease;
-
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -582,7 +468,6 @@ html {
 .content-card-product .price {
 	justify-self: end;
 	align-self: center;
-
 	font-size: 1.7rem;
 	font-weight: 600;
 }
@@ -595,9 +480,6 @@ html {
 	margin-left: 0.5rem;
 }
 
-/* ********************************** */
-/*               GALLERY              */
-/* ********************************** */
 .gallery {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
@@ -617,9 +499,6 @@ html {
 	grid-row: 1/3;
 }
 
-/* ********************************** */
-/*              SPECIALS              */
-/* ********************************** */
 .specials {
 	display: flex;
 	flex-direction: column;
@@ -627,9 +506,6 @@ html {
 	margin-bottom: 3rem;
 }
 
-/* ********************************** */
-/*                BLOGS               */
-/* ********************************** */
 .blogs {
 	display: flex;
 	flex-direction: column;
@@ -659,7 +535,6 @@ html {
 	position: absolute;
 	bottom: 1.5rem;
 	right: -2.5rem;
-
 	display: flex;
 	gap: 0.7rem;
 	z-index: -1;
@@ -676,7 +551,6 @@ html {
 	padding: 1rem;
 	border-radius: 50%;
 	transition: all 0.4s ease;
-
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -733,24 +607,20 @@ html {
 	background-color: var(--dark-color);
 }
 
-/* ********************************** */
-/*               FOOTER               */
-/* ********************************** */
-
 .footer {
 	background-color: var(--primary-color);
+	padding: 3rem 1rem;
 }
 
 .container-footer {
 	display: flex;
 	flex-direction: column;
 	gap: 4rem;
-	padding: 3rem;
 }
 
 .menu-footer {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr) 30rem;
+	grid-template-columns: repeat(3, 1fr);
 	gap: 3rem;
 	justify-items: center;
 }
@@ -808,7 +678,6 @@ html {
 	border-radius: 50%;
 	width: 3rem;
 	height: 3rem;
-
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -827,24 +696,8 @@ html {
 	background-color: #00acee;
 }
 
-.youtube {
-	background-color: #c4302b;
-}
-
-.pinterest {
-	background-color: #c8232c;
-}
-
 .instagram {
-	background: linear-gradient(
-		#405de6,
-		#833ab4,
-		#c13584,
-		#e1306c,
-		#fd1d1d,
-		#f56040,
-		#fcaf45
-	);
+	background: linear-gradient(#405de6, #833ab4, #c13584, #e1306c, #fd1d1d, #f56040, #fcaf45);
 }
 
 .content p {
@@ -894,7 +747,6 @@ html {
 	display: flex;
 	justify-content: space-between;
 	padding-top: 2rem;
-
 	border-top: 1px solid #d2b495;
 }
 
@@ -903,9 +755,6 @@ html {
 	font-size: 1.6rem;
 }
 
-/* ********************************** */
-/*       MEDIA QUERIES -- 768px       */
-/* ********************************** */
 @media (max-width: 768px) {
 	html {
 		font-size: 55%;
@@ -935,6 +784,19 @@ html {
 
 	.menu {
 		display: none;
+		flex-direction: column;
+		gap: 1rem;
+		background-color: var(--primary-color);
+		padding: 2rem;
+		border-radius: 1rem;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+	}
+
+	.menu.show {
+		display: flex;
 	}
 
 	.content-banner {
@@ -988,14 +850,21 @@ html {
 	}
 
 	.container-blogs {
-		overflow: hidden;
-		grid-template-columns: 1fr 1fr;
-
-		height: 52rem;
+		grid-template-columns: 1fr;
+		gap: 2rem;
+		padding: 2rem;
 	}
 
 	.menu-footer {
 		grid-template-columns: repeat(2, 1fr);
+		gap: 2rem;
+	}
+
+	.contact-info ul,
+	.information ul,
+	.my-account ul {
+		display: flex;
+		flex-direction: column;
 	}
 
 	.copyright {
@@ -1006,9 +875,6 @@ html {
 	}
 }
 
-/* ********************************** */
-/*       MEDIA QUERIES -- 468px       */
-/* ********************************** */
 @media (max-width: 468px) {
 	html {
 		font-size: 42.5%;
@@ -1064,7 +930,6 @@ html {
 	.gallery {
 		grid-template-rows: repeat(2, 20rem);
 	}
-	
 
 	.blogs {
 		padding: 2rem;
@@ -1072,7 +937,8 @@ html {
 
 	.container-blogs {
 		grid-template-columns: 1fr;
-		height: 75rem;
+		gap: 2rem;
+		padding: 2rem;
 	}
 
 	.content-blog h3 {
@@ -1087,25 +953,37 @@ html {
 		font-size: 2.2rem;
 	}
 
-	.btn-read-more{
+	.btn-read-more {
 		font-size: 1.8rem;
 	}
 
 	.contact-info ul,
 	.information ul,
-	.my-account ul{
-		display: none;
+	.my-account ul {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
 	}
 
 	.contact-info {
 		align-items: center;
 	}
 
-	.menu-footer{
+	.menu-footer {
 		grid-template-columns: 1fr;
+		gap: 1rem;
 	}
 
-	.content p{
+	.content p {
 		font-size: 1.6rem;
+	}
+
+	.copyright {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 1.5rem;
+		padding: 2rem;
+		text-align: center;
 	}
 }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Position;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
+
 
 /**
  * Class PositionController
@@ -105,5 +107,15 @@ class PositionController extends Controller
 
         return redirect()->route('positions.index')
             ->with('success', 'Position deleted successfully');
+    }
+    public function downloadPdf()
+    {
+        $position = Position::all();
+
+       view()->share('positions.pdf',$position);
+
+        $pdf = PDF::loadView('position.pdf', ['positions' => $position]);
+
+        return $pdf->download('position.pdf');
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Vehicle;
 use App\Models\Brand;
+use File;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,13 +15,13 @@ class AutomovilesController extends Controller
     {
         $brands = Brand::all();
         $categories = Category::all();
-        return view('usuario.automoviles', compact('brands', 'categories'));
+        return view('usuario.automoviles.create', compact('brands', 'categories'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'matricula' => 'required|string|max:20',
+            'matricula' => 'required|string|max:20|unique:vehicles,matricula',
             'id_marca' => 'required|exists:brands,id',
             'modelo' => 'required|string|max:191',
             'año_salida_vh' => 'required|integer',
@@ -51,13 +52,13 @@ class AutomovilesController extends Controller
 
         $vehicle->save();
 
-        return redirect()->route('usuario.index')->with('success', 'Vehículo agregado exitosamente');
+        return redirect()->route('usuario.automoviles.index')->with('success', 'Vehículo agregado exitosamente');
     }
 
     public function index()
     {
         $vehicles = Vehicle::where('id_usuario', Auth::id())->get();
-        return view('usuario.index', compact('vehicles'));
+        return view('usuario.automoviles.index', compact('vehicles'));
     }
 
     public function edit($id)
@@ -65,13 +66,13 @@ class AutomovilesController extends Controller
         $vehicle = Vehicle::find($id);
         $brands = Brand::all();
         $categories = Category::all();
-        return view('usuario.edit', compact('vehicle', 'brands', 'categories'));
+        return view('usuario.automoviles.edit', compact('vehicle', 'brands', 'categories'));
     }
 
     public function update(Request $request, $id)
     {
         $request->validate([
-            'matricula' => 'required|string|max:20',
+            'matricula' => 'required|string|max:20|unique:vehicles,matricula',
             'id_marca' => 'required|exists:brands,id',
             'modelo' => 'required|string|max:191',
             'año_salida_vh' => 'required|integer',
@@ -101,7 +102,7 @@ class AutomovilesController extends Controller
 
         $vehicle->save();
 
-        return redirect()->route('usuario.index')->with('success', 'Vehículo actualizado exitosamente');
+        return redirect()->route('usuario.automoviles.index')->with('success', 'Vehículo actualizado exitosamente');
     }
 
     public function destroy($id)
@@ -109,6 +110,8 @@ class AutomovilesController extends Controller
         $vehicle = Vehicle::find($id);
         $vehicle->delete();
 
-        return redirect()->route('usuario.index')->with('success', 'Vehículo eliminado exitosamente');
+        return redirect()->route('usuario.automoviles.index')->with('success', 'Vehículo eliminado exitosamente');
     }
+
+    
 }

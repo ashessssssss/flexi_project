@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
+
 
 /**
  * Class UserController
@@ -105,5 +107,16 @@ class UserController extends Controller
 
         return redirect()->route('users.index')
             ->with('success', 'User deleted successfully');
+    }
+
+    public function downloadPdf()
+    {
+        $user = User::all();
+
+       view()->share('users.pdf',$user);
+
+        $pdf = PDF::loadView('user.pdf', ['users' => $user]);
+
+        return $pdf->download('user.pdf');
     }
 }

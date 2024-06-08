@@ -24,9 +24,9 @@
                   <form method="post" class="needs-validation" novalidate="" action="{{route('usuario.profile.update')}}  " enctype="multipart/form-data">
                   @csrf
 
-                  <div class="profile-widget-header">
+                  <div class="profile-widget-header text-center" style="background-color: #f8f9fa; padding: 15px;">
                     <img src="{{asset(Auth::user()->image)}}" alt=""
-                    class="rounded-circle profile-widget-picture">
+                    class="img-thumbnail rounded-circle mb-3" width="150"">
 
 
                   </div>
@@ -96,16 +96,20 @@
                 <div class="card profile-widget">
 
                 @if ($errors->any())
-  @foreach ($errors->all() as $error)
-    <div class="alert alert-danger">{{ $error }}</div>
-  @endforeach
-@endif
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
 
-@if (session('notification'))
-  <div class="alert alert-success" role="alert">
-    {{ session('notification') }}
-  </div>
-@endif
+                @if (session('notification'))
+                     <div class="alert alert-success" role="alert">
+                     {{ session('notification') }}
+                     </div>
+                @endif
 
                   <form method="post" class="needs-validation" novalidate="" action="{{route('usuario.password.update')}}" enctype="multipart/form-data">
                   @csrf

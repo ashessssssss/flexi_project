@@ -32,6 +32,7 @@
                             </svg>
                             Create Type Product
                         </a>
+                        
                     </div>
                 </div>
             </div>

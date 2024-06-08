@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Vehicle;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
+
 
 /**
  * Class VehicleController
@@ -105,5 +107,16 @@ class VehicleController extends Controller
 
         return redirect()->route('vehicles.index')
             ->with('success', 'Vehicle deleted successfully');
+    }
+
+    public function downloadPdf()
+    {
+        $vehicle = Vehicle::all();
+
+       view()->share('vehicles.pdf',$vehicle);
+
+        $pdf = PDF::loadView('vehicle.pdf', ['vehicles' => $vehicle]);
+
+        return $pdf->download('vehicle.pdf');
     }
 }

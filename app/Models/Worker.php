@@ -16,9 +16,11 @@ use Illuminate\Database\Eloquent\Model;
  * @property $sueldo
  * @property $created_at
  * @property $updated_at
+ * @property $nombre_emp
  *
  * @property Appoiment[] $appoiments
  * @property Position $position
+ * @property Receipt[] $receipts
  * @property User $user
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
@@ -32,6 +34,7 @@ class Worker extends Model
 		'estado_emp' => 'required',
 		'id_puesto' => 'required',
 		'sueldo' => 'required',
+		'nombre_emp' => 'required',
     ];
 
     protected $perPage = 20;
@@ -41,7 +44,7 @@ class Worker extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_usuario','fecha_ing_emp','fecha_sali_emp','estado_emp','id_puesto','sueldo'];
+    protected $fillable = ['id_usuario','fecha_ing_emp','fecha_sali_emp','estado_emp','id_puesto','sueldo','nombre_emp'];
 
 
     /**
@@ -58,6 +61,14 @@ class Worker extends Model
     public function position()
     {
         return $this->hasOne('App\Models\Position', 'id', 'id_puesto');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function receipts()
+    {
+        return $this->hasMany('App\Models\Receipt', 'id_empleado', 'id');
     }
     
     /**

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
+
 
 /**
  * Class CategoryController
@@ -105,5 +107,15 @@ class CategoryController extends Controller
 
         return redirect()->route('categories.index')
             ->with('success', 'Category deleted successfully');
+    }
+    public function downloadPdf()
+    {
+        $category = Category::all();
+
+       view()->share('categories.pdf',$category);
+
+        $pdf = PDF::loadView('category.pdf', ['categories' => $category]);
+
+        return $pdf->download('category.pdf');
     }
 }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Worker;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
+
 
 /**
  * Class WorkerController
@@ -105,5 +107,16 @@ class WorkerController extends Controller
 
         return redirect()->route('workers.index')
             ->with('success', 'Worker deleted successfully');
+    }
+
+    public function downloadPdf()
+    {
+        $worker = Worker::all();
+
+       view()->share('workers.pdf',$worker);
+
+        $pdf = PDF::loadView('worker.pdf', ['workers' => $worker]);
+
+        return $pdf->download('worker.pdf');
     }
 }

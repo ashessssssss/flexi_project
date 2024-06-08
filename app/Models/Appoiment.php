@@ -20,6 +20,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $updated_at
  *
  * @property Product $product
+ * @property Receipt[] $receipts
  * @property Service $service
  * @property User $user
  * @property Vehicle $vehicle
@@ -36,9 +37,6 @@ class Appoiment extends Model
 		'id_vh' => 'required',
 		'fecha_cita' => 'required',
 		'hora_cita' => 'required',
-		'id_empleado' => 'required',
-		'estado_cita' => 'required',
-		'id_prod' => 'required',
     ];
 
     protected $perPage = 20;
@@ -57,6 +55,14 @@ class Appoiment extends Model
     public function product()
     {
         return $this->hasOne('App\Models\Product', 'id', 'id_prod');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function receipts()
+    {
+        return $this->hasMany('App\Models\Receipt', 'id_cita', 'id');
     }
     
     /**

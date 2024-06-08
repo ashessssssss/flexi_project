@@ -32,6 +32,14 @@
                             </svg>
                             Create Worker
                         </a>
+                        <br>
+                        <br>
+
+                        <div class="row">
+              <div class="col-xl-12 text-right">
+                  <a href="{{ route('worker.pdf') }}" class="btn btn-success btn-sm">Export to PDF</a>
+              </div>
+          </div>
                     </div>
                 </div>
             </div>
@@ -85,12 +93,14 @@
                                         </svg>
                                     </th>
                                     
-										<th>Id Usuario</th>
+									<th>Nombre Emp</th>	
+                                    <th>Id Usuario</th>
 										<th>Fecha Ing Emp</th>
 										<th>Fecha Sali Emp</th>
 										<th>Estado Emp</th>
 										<th>Id Puesto</th>
 										<th>Sueldo</th>
+										
 
                                     <th class="w-1"></th>
                                 </tr>
@@ -102,13 +112,14 @@
                                         <td><input class="form-check-input m-0 align-middle" type="checkbox"
                                                    aria-label="Select worker"></td>
                                         <td>{{ ++$i }}</td>
-                                        
+                                        <td>{{ $worker->nombre_emp }}</td>
 											<td>{{ $worker->id_usuario }}</td>
 											<td>{{ $worker->fecha_ing_emp }}</td>
 											<td>{{ $worker->fecha_sali_emp }}</td>
 											<td>{{ $worker->estado_emp }}</td>
 											<td>{{ $worker->id_puesto }}</td>
 											<td>{{ $worker->sueldo }}</td>
+											
 
                                         <td>
                                             <div class="btn-list flex-nowrap">
